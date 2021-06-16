@@ -6,6 +6,7 @@ const { Router } = require('express');
 const { check } = require('express-validator');
 const { createUser, loginUser, revalidateToken } = require('../controllers/auth');
 const router = Router();
+const { validateFields } = require('../middlewares/validate-fields');
 
 router.post(
     '/', 
@@ -14,6 +15,7 @@ router.post(
         check('email', 'Correo no válido').isEmail(),
         check('password', 'La contraseña es obligatoria').not().isEmpty(),
         check('password', 'La contraseña debe de ser de 6 caracteres').isLength({min: 6}),
+        validateFields
     ],
     loginUser);
 
@@ -25,6 +27,7 @@ router.post(
         check('email', 'Correo no válido').isEmail(),
         check('password', 'La contraseña es obligatoria').not().isEmpty(),
         check('password', 'La contraseña debe de ser de 6 caracteres').isLength({min: 6}),
+        validateFields
     ], 
     createUser);
 
