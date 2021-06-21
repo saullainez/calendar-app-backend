@@ -16,6 +16,8 @@
  * Middlewares de Express.
  * JWT.
  * Autenticación pasiva.
+ * Validaciones automáticas.
+ * Validaciones personalizadas.
  * Payloads.
  * Encriptación de contraseñas.
  * Rutas.
@@ -45,6 +47,8 @@
  * Express Middlewares.
  * JWT.
  * Passive authentication.
+ * Automatic validations.
+ * Custom validations.
  * Payloads.
  * Password encryption.
  * Routes.
