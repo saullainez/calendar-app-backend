@@ -1,3 +1,8 @@
+/**
+    Event routes
+    /api/events
+
+ */
 const { Router } = require('express');
 const { getEvents, createEvent, updateEvent, deleteEvent } = require('../controllers/events');
 const { validateJWT } = require('../middlewares/validate-jwt');
