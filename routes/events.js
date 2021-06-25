@@ -26,7 +26,16 @@ router.post(
         check('end', 'La fecha de fin no es válida').custom( isDate ),
         validateFields
     ], createEvent);
-router.put('/:id', updateEvent);
+router.put(
+    '/:id',
+    [
+        check('title', 'El tìtulo es obligatorio').not().isEmpty(),
+        check('start', 'La fecha de inicio es obligatoria').not().isEmpty(),
+        check('start', 'La fecha de inicio no es válida').custom( isDate ),
+        check('end', 'La fecha de fin es obligatoria').not().isEmpty(),
+        check('end', 'La fecha de fin no es válida').custom( isDate ),
+        validateFields
+    ], updateEvent);
 router.delete('/:id', deleteEvent);
 
 module.exports = router;
